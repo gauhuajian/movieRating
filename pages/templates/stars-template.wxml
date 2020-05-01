@@ -1,0 +1,10 @@
+<template name='stars'>
+  <view wx:for="{{[1,2,3,4,5]}}"
+    wx:key="index"
+    wx:for-item="i"
+  >
+    <image wx:if='{{item.rating.stars/10>=index+1}}' src="../../img/star_fill_whole.png"></image>
+    <image wx:elif='{{item.rating.stars/10>=index && item.rating.stars%10 !=0  }}' src="../../img/star_fill_half.png"></image>
+    <image wx:else  src="../../img/star_fill_none.png"></image>
+  </view>
+</template>

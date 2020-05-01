@@ -1,0 +1,17 @@
+<import src='/pages/templates/stars-template.wxml' />
+<scroll-view scroll-y="true" bindscrolltolower="load">
+<view class="more" >
+    <view class="more-item"
+      wx:for="{{list}}"
+      wx:key="index"
+      bindtap="toDetails" data-id="{{item.id}}"
+    >
+      <image  class="item-img" src="{{item.images.large}}"></image>
+      <view class="item-title">{{item.title}}</view>
+      <view class="img-stars">
+        <template is='stars' data="{{item}}"/>
+        <view class="item-average">{{item.rating.average}}</view>
+      </view>
+    </view>
+</view>
+</scroll-view>

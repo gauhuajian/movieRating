@@ -1,0 +1,24 @@
+.more{
+  display: flex;
+  flex-wrap: wrap;
+  height: 1200rpx;
+}
+.more-item{
+  width: 200rpx;
+  padding: 25rpx;
+}
+.item-img{
+  width: 200rpx;
+  height: 300rpx;
+}
+.item-title,.item-average{
+  text-align: center;
+}
+.img-stars{
+  display: flex; 
+  justify-content: space-between;
+}
+.img-stars image{
+  width: 30rpx;
+  height: 30rpx;
+}

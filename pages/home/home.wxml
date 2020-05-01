@@ -1,0 +1,45 @@
+<import src='/pages/templates/stars-template.wxml' />
+
+<view class='header-search'>
+  <view 
+    class='search-main'
+    bindtap="toSearch"
+  >
+      搜索
+  </view>
+</view>
+<!-- container  -->
+<view class='container'>
+    <!-- list -->
+  <view class='list' wx:for="{{list}}" wx:key="index">
+    <!-- list-header -->
+    <view class='list-header' >
+       <view class='header-title'>{{item.title}}</view>
+       <view class='header-content' bindtap="toMore" data-title="{{item.title}}" >
+          查看更多 
+       </view>
+    </view><!--list-header end-->
+    <!-- list-img -->
+    <scroll-view scroll-x="true">
+    
+      <view class="list-img">
+        <view class="img-item"
+         wx:for="{{item.move.subjects}}"
+         wx:key="item"
+         bindtap="toDetails"
+         data-id="{{item.id}}"
+        >
+          <image class="item-logo" src="{{item.images.large}}"></image>
+          <view class="item-name">{{item.title}}</view>
+         <view class='img-stars'>
+              <template is='stars' data="{{item}}"/>
+              <text class="average">{{item.rating.average}}</text>
+          </view>
+        </view>
+      </view><!--list-img end-->
+    </scroll-view>
+
+  </view><!--list end-->
+
+</view> <!--container end-->
+

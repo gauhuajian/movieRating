@@ -1,0 +1,14 @@
+<view class="search">
+  <input class="search-input" placeholder="搜索" bindinput="loadInput"></input>
+</view>
+<view class="search-item" 
+  wx:for="{{searchList}}"
+  wx:key="index"
+  bindtap="toDetails"
+  data-id="{{item.id}}"
+>
+  <image class="item-img" src="{{item.images.large}}"></image>
+  <view class="item-content">
+    <view class="item-title">{{item.title}}</view>
+  </view>
+</view>
